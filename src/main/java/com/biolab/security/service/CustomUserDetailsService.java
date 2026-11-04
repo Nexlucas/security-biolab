@@ -10,6 +10,10 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
+        return User.builder()
+                .username(usuario.getCpf())
+                .password(usuario.getSenha())
+                .roles(usuario.getRole().name().replace("ROLE_",""))
+                .build();
     }
 }
