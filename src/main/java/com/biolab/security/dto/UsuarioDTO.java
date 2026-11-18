@@ -19,11 +19,14 @@ public class UsuarioDTO {
     @Size(min = 6,message = "A senha deve ter no minimo 6 caracteres")
     private String senha;
     private Role role;
+    @Size(min = 11, max =11)
+    private String cpf;
 
-    public UsuarioDTO(String nome, String email, String senha, Role role) {
+    public UsuarioDTO(String nome, String email, String senha, String cpf, Role role) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.role = role;
+        this.cpf = cpf;
     }
 }
